@@ -6,7 +6,6 @@ import React from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 import { UniversalLink } from '@plone/volto/components';
 import { Grid } from 'semantic-ui-react';
-import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/Container';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import SocialNetworks from '../../../../../components/SocialNetworks/SocialNetworks';
 import config from '@plone/volto/registry';
@@ -31,7 +30,6 @@ const Footer = () => {
   const socialNetworks = settings.socialNetworks;
   return (
     <footer id="footer">
-      <Container layout className="footer">
         <Grid stackable columns={columns} className={'navFooter'}>
           {navigation.map((item, index) => {
             return (
@@ -61,8 +59,7 @@ const Footer = () => {
           })}
         </Grid>
         <SocialNetworks networks={socialNetworks} />
-      </Container>
-      <Container layout className="signature">
+
         <span className="item powered-by">
           Desenvolvido pela comunidade{' '}
           <a href="https://plone.org.br/" target="_blank" rel="noreferrer">
@@ -74,7 +71,7 @@ const Footer = () => {
           </a>
           {'.'}
         </span>
-      </Container>
+
     </footer>
   );
 };
