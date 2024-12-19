@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Container from '../../../../../components/Atoms/Container/Container';
 import { Navigation } from '@plone/volto/components';
-
+import Logo from '../../../../../components/Logo';
 import SearchWidget from '../../../../../components/Search/SearchWidget';
 import useSticky from '../../../../../helpers/useSticky';
 import cx from 'classnames';
@@ -17,11 +18,16 @@ const Header = (props) => {
         sticky: sticky,
       })}
     >
-
+      <Container
+        layout
+        className={cx('header-wrapper', {
+          sticky: sticky,
+        })}
+      >
         <div className="header">
           <div className="logo-nav-wrapper">
             <div className="logo">
-
+              <Logo href={'#'} />
             </div>
             <Navigation pathname={pathname} />
             <div className="search-wrapper">
@@ -31,7 +37,7 @@ const Header = (props) => {
             </div>
           </div>
         </div>
-
+      </Container>
     </header>
   );
 };
